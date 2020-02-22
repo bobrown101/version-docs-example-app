@@ -1,0 +1,20 @@
+name: Version Docs
+on: push
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@master
+      with:
+        node-version: 13.5
+    - name: Install dependencies
+      run: yarn install
+    - name: Generate docs
+      run: yarn docs
+    - name: Version docs
+      uses: bobrown101/version-docs@v2.1.2
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        doc-location: docs
+        doc-branch: gh-pages
