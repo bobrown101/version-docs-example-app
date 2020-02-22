@@ -42,7 +42,7 @@ jobs:
 
 ## `sh: 1: cannot open /dev/tty: No such device or address`
 
-This will occur if you use a tool like husky to install git hooks, and commitizen to help create conventional commit messages. These are helpful for local development, but on CI servers they sometimes get in the way. In our case it prevents version-docs from committing your docs to the docs-branch. The solution? Set the enviornment variable CI=true for your jobs
+This will occur if you use a tool like husky to install git hooks, and commitizen to help create conventional commit messages. These are helpful for local development, but on CI servers they sometimes get in the way. In our case it prevents version-docs from committing your docs to the docs-branch. The solution? Set the enviornment variable CI for your jobs
 
 ```
 name: Version Docs
